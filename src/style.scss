@@ -7,6 +7,7 @@
 // color
 $main-color: #475771;
 $secondary-color: #ffe082;
+$opt-color: #157347;
 $light-color: white;
 $gray-color: #ddd;
 
@@ -28,6 +29,10 @@ $gray-color: #ddd;
 @mixin rowStyle {
   padding: 0.25rem 0.5rem;
   border: 1px solid $main-color;
+}
+@mixin optStyle {
+  background-color: $opt-color !important;
+  color: $light-color !important;
 }
 
 // table
@@ -205,6 +210,9 @@ table thead > tr > th {
       color: white !important;
     }
   }
+  .modal-header#optModalHeader {
+    @include optStyle;
+  }
 
   label.addLabel {
     margin-bottom: 5px;
@@ -253,4 +261,47 @@ label.error {
 
 .btnActionGroup {
   text-align: center;
+}
+
+// 客製化相關
+#opt-btn {
+  position: fixed;
+  right: 5%;
+  bottom: 10%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.form-select#perPage {
+  width: 25%;
+  margin-left: 20px;
+}
+
+.form-check-input {
+  background-color: $opt-color;
+  height: 20px;
+  width: 40px;
+}
+
+.optform {
+  &__opt {
+    margin: 1rem 2.5rem;
+
+    .form-check-input {
+      width: 2.7rem !important;
+      height: 1.7rem !important;
+      margin-right: 0.8rem;
+      border-color: $opt-color !important;
+
+      &:checked {
+        background-color: $opt-color;
+      }
+    }
+
+    .form-check-label {
+      line-height: 2rem;
+    }
+  }
 }

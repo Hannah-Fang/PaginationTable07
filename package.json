@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "rollup": "^2.59.0"
+  },
+  "scripts": {
+    "build": "rollup -c rollup.config.js"
+  },
+  "compilerOptions": {
+    "noEmitHelpers": true,
+    "importHelpers": true
+  }
+}

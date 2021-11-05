@@ -1,0 +1,7 @@
+.DS_Store
+node_module
+.vscode
+
+# Children Dir
+**/node_module**
+**/.DS_Store**
