@@ -34,6 +34,9 @@
         <div class="tool-bar__show d-flex ms-4" id="domShowPerPage">
           <label for="displayLength">顯示筆數</label>
           <select class="form-select" id="maxRows" aria-label="顯示筆數">
+            <!-- <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option> -->
           </select>
         </div>
       </div>
@@ -230,8 +233,7 @@
   import _data from './src/_data.js'
 
   $( function () {
-    const table = new TableCRUD( '#userTable > tbody', _data );
-    console.log(_data);
+    const table = new TableCRUD( '#userTable > tbody', {data: _data} );
   })
 </script>
 <!-- <script type="module" src="./src/index.js"></script> -->

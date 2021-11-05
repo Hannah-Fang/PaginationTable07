@@ -11,13 +11,28 @@ export const DEFAULTS =  {
   showPage: true,
   // 初始分頁數
   perPage: 5,
+  // 處理中的對象資料
+  targetId: 0,
   /**
    * 更新按鈕的callback,並提供相關參數值使用
    * @param {Object} [tr] 列的element
    * @param {Object} [rowData] 當列的欄位資料
    */ 
   // 編輯按鈕 Callback (點擊之後的事情)
-  onEdit: function(el, rowData){
+  onEdit: function(vm, rowData){
+    // 將所選列的資料顯示在表格中
+    $("#editenname").val(rowData.name);
+    $("#editemail").val(rowData.email);
+    $("#editphone").val(rowData.phone);
+    
+    $("#editBtn").click(function(e){
+      // e.preventDefault();
+      e.stopPropagation();
+      let type = "editData";
+      let form = $("form#editform");
+      vm.options.targetId = rowData.id;
+      vm.handleValidate(e, type, form);
+    });
 
   },
   /**
@@ -26,7 +41,8 @@ export const DEFAULTS =  {
    * @param {Number} [id] 資料序號
    */ 
   // 刪除按鈕 Callback (點擊之後的事情)
-  onDelete: function(el, id){
+  onDelete: function(vm, id){
+    vm.removeData(id);
 
   }
 };
