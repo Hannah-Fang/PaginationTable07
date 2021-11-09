@@ -1,3 +1,3 @@
-import TableCRUD from './table.js'
+import ActivityTimeline from './activityTimeline.js';
 
-export default index.js
+export default ActivityTimeline;
